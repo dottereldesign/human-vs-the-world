@@ -3021,12 +3021,75 @@ input:focus,
   gap: 24px;
 }
 
+.resources-header {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(300px, 0.74fr);
+  align-items: stretch;
+  gap: 18px;
+  min-height: clamp(220px, 24vw, 330px);
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.resources-header > div:first-child {
+  position: relative;
+  z-index: 2;
+  align-self: end;
+  min-width: 0;
+  padding: clamp(24px, 4vw, 42px);
+}
+
 .resources-header h1 {
   max-width: none;
   margin-bottom: 0;
   color: var(--heading);
   font-size: clamp(54px, 7.4vw, 112px);
   line-height: 0.95;
+}
+
+.resources-header .subline {
+  max-width: 760px;
+}
+
+.resources-header-art {
+  position: relative;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.resources-header-art::before,
+.resources-header-art::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: '';
+  pointer-events: none;
+}
+
+.resources-header-art::before {
+  background:
+    linear-gradient(90deg, var(--surface) 0%, rgba(25, 26, 26, 0.92) 16%, rgba(25, 26, 26, 0.5) 44%, rgba(25, 26, 26, 0.08) 74%, transparent 100%),
+    linear-gradient(180deg, rgba(18, 20, 20, 0.08), var(--surface) 100%);
+}
+
+.resources-header-art::after {
+  left: -1px;
+  width: 30%;
+  background: linear-gradient(90deg, var(--surface) 0%, rgba(25, 26, 26, 0.72) 42%, transparent 100%);
+  filter: blur(14px);
+  transform: translateX(-18px);
+}
+
+.resources-header-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  object-position: center right;
+  filter: saturate(0.92) contrast(1.04) brightness(0.82);
 }
 
 .resources-grid {
@@ -4150,6 +4213,28 @@ input:focus,
 
   .resources-header h1 {
     font-size: clamp(48px, 15vw, 76px);
+  }
+
+  .resources-header {
+    grid-template-columns: 1fr;
+    align-items: end;
+    min-height: 260px;
+  }
+
+  .resources-header > div:first-child {
+    padding: 22px;
+  }
+
+  .resources-header-art {
+    position: absolute;
+    inset: 0;
+    opacity: 0.62;
+  }
+
+  .resources-header-art::before {
+    background:
+      linear-gradient(90deg, rgba(25, 26, 26, 0.94), rgba(25, 26, 26, 0.66), rgba(25, 26, 26, 0.22)),
+      linear-gradient(180deg, rgba(18, 20, 20, 0.2), var(--surface) 100%);
   }
 
   .w3gjs-hero h1 {

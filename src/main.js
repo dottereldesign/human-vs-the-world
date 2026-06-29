@@ -6,6 +6,7 @@ import orcIcon from './assets/race-orc-icon.png'
 import chaemikoImage from './assets/chaemiko-card.png'
 import douyuLogo from './assets/stream-douyu-logo.png'
 import playerEarningsBgImage from './assets/player-earnings-bg-img.png'
+import resourcesPageImage from './assets/resources-page-img.png'
 import infiFireballVideo from './assets/infi-card-fireball-effect.webm'
 import fortitudeImage from './assets/fortitude-card.png'
 import hawkImage from './assets/hawk-card.png'
@@ -3061,6 +3062,9 @@ const renderResourcesPage = () => `
         <p class="eyebrow">Warcraft III directory</p>
         <h1>Resources</h1>
         <p class="subline">Active Warcraft III hubs, tooling, replay libraries, and community references for building the Human vs The World knowledge base.</p>
+      </div>
+      <div class="resources-header-art" aria-hidden="true">
+        <img src="${resourcesPageImage}" alt="" />
       </div>
     </header>
     <div class="resources-grid">
