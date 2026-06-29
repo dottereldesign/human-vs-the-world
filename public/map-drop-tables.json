@@ -1,0 +1,72 @@
+{
+  "generatedAt": "2026-06-29T00:45:30.072149+00:00",
+  "source": "Extracted from downloaded WC3Maps archives and keyed by replay map SHA1.",
+  "maps": {
+    "3e2f4a66f39466bbaa339ea6c019fc2b30752aea": {
+      "file": "5185_w3c_251104_0950_Hammerfall.w3x",
+      "wc3mapsId": 406125,
+      "dropGroups": {
+        "YiI1": {
+          "rolls": 4
+        },
+        "YiI2": {
+          "rolls": 4
+        },
+        "YiI3": {
+          "rolls": 4
+        },
+        "YjI2": {
+          "rolls": 2
+        },
+        "YjI3": {
+          "rolls": 2
+        },
+        "YjI4": {
+          "rolls": 2
+        },
+        "YkI1": {
+          "rolls": 6
+        },
+        "YkI2": {
+          "rolls": 2
+        }
+      }
+    },
+    "7b89059994f918b9b0632333fc84c60d1913eb7f": {
+      "file": "54_w3c_251104_0950_Tidehunters_v1.2.w3x",
+      "wc3mapsId": 405836,
+      "dropGroups": {
+        "YiI1": {
+          "rolls": 4
+        },
+        "YiI2": {
+          "rolls": 4
+        },
+        "YiI3": {
+          "rolls": 2
+        },
+        "YiI4": {
+          "rolls": 2
+        },
+        "YiI5": {
+          "rolls": 1
+        },
+        "YjI2": {
+          "rolls": 1
+        },
+        "YjI3": {
+          "rolls": 3
+        },
+        "YjI4": {
+          "rolls": 1
+        },
+        "YkI1": {
+          "rolls": 1
+        },
+        "YkI2": {
+          "rolls": 4
+        }
+      }
+    }
+  }
+}
