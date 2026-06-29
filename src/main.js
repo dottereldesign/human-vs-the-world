@@ -3738,7 +3738,6 @@ const render = () => {
     <div class="menu-backdrop" data-menu-close aria-hidden="true"></div>
     <aside class="menu-panel" id="site-menu" aria-hidden="true">
       <div class="menu-panel-inner">
-        <p class="eyebrow">Browse</p>
         <nav class="menu-nav" aria-label="Menu">
           ${allLink(route.type === 'all' ? 'is-active' : '')}
           ${buildsLink(route.type === 'builds' ? 'is-active' : '')}

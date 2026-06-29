@@ -1248,7 +1248,6 @@ const result = await parser.parse("replay.w3g");</code></pre>
     <div class="menu-backdrop" data-menu-close aria-hidden="true"></div>
     <aside class="menu-panel" id="site-menu" aria-hidden="true">
       <div class="menu-panel-inner">
-        <p class="eyebrow">Browse</p>
         <nav class="menu-nav" aria-label="Menu">
           ${Xt(e.type===`all`?`is-active`:``)}
           ${Zt(e.type===`builds`?`is-active`:``)}
