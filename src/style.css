@@ -1007,7 +1007,7 @@ h2 {
 
 .player-card-fireball {
   left: max(81.8cqw, calc(50cqw + 68px));
-  top: max(124px, 57.8cqw);
+  top: max(130px, calc(57.8cqw + 6px));
   width: clamp(58px, 31%, 74px);
   aspect-ratio: 1;
   object-fit: contain;
@@ -4111,7 +4111,7 @@ input:focus,
 
   .player-card-fireball {
     left: max(81.8cqw, calc(50cqw + 58px));
-    top: max(105px, 57.8cqw);
+    top: max(110px, calc(57.8cqw + 5px));
   }
 
   .home-layout {
