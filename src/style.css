@@ -966,6 +966,7 @@ h2 {
   position: relative;
   display: grid;
   place-items: center;
+  container-type: inline-size;
   min-width: 0;
   overflow: hidden;
   border-radius: 8px 8px 0 0;
@@ -1005,12 +1006,12 @@ h2 {
 }
 
 .player-card-fireball {
-  right: 4%;
-  top: 69%;
+  left: max(81.8cqw, calc(50cqw + 68px));
+  top: max(124px, 57.8cqw);
   width: clamp(58px, 31%, 74px);
   aspect-ratio: 1;
   object-fit: contain;
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
   mix-blend-mode: screen;
   filter: saturate(1.08) brightness(1.08) drop-shadow(0 0 10px rgba(255, 126, 30, 0.5));
   opacity: 0.96;
@@ -4105,6 +4106,11 @@ input:focus,
     flex-basis: calc((100% - 12px) / 2);
     grid-template-rows: 160px 1fr;
     min-height: 310px;
+  }
+
+  .player-card-fireball {
+    left: max(81.8cqw, calc(50cqw + 58px));
+    top: max(105px, 57.8cqw);
   }
 
   .home-layout {

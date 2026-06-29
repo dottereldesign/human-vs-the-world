@@ -7,6 +7,7 @@ const dist = path.join(root, 'dist')
 
 const publishEntries = [
   'assets',
+  'favicon.webp',
   'favicon.svg',
   'icons.svg',
   'liquipedia-human-earnings.json',
