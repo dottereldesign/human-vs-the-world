@@ -665,15 +665,17 @@ body.has-scrolled-header .brand img {
   color: var(--white);
 }
 
-.footer-bnet-tag svg,
 .footer-github-link svg {
   width: 20px;
   height: 20px;
   fill: currentColor;
 }
 
-.footer-bnet-tag svg {
-  color: #48a0c7;
+.footer-bnet-tag img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  flex: 0 0 auto;
 }
 
 .footer-ai-note {
