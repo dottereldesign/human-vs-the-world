@@ -2405,15 +2405,26 @@ input:focus,
 }
 
 .money-header {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(300px, 0.74fr);
+  align-items: stretch;
   gap: 18px;
+  min-height: clamp(220px, 24vw, 330px);
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--surface);
 }
 
 .money-header > div {
   min-width: 0;
-  flex: 1;
+}
+
+.money-header > div:first-child {
+  position: relative;
+  z-index: 2;
+  align-self: end;
+  padding: clamp(24px, 4vw, 42px);
 }
 
 .money-header h1 {
@@ -2425,6 +2436,45 @@ input:focus,
 
 .money-header .subline {
   max-width: 760px;
+}
+
+.money-header-art {
+  position: relative;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.money-header-art::before,
+.money-header-art::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: '';
+  pointer-events: none;
+}
+
+.money-header-art::before {
+  background:
+    linear-gradient(90deg, var(--surface) 0%, rgba(25, 26, 26, 0.92) 16%, rgba(25, 26, 26, 0.5) 44%, rgba(25, 26, 26, 0.08) 74%, transparent 100%),
+    linear-gradient(180deg, rgba(18, 20, 20, 0.08), var(--surface) 100%);
+}
+
+.money-header-art::after {
+  left: -1px;
+  width: 30%;
+  background: linear-gradient(90deg, var(--surface) 0%, rgba(25, 26, 26, 0.72) 42%, transparent 100%);
+  filter: blur(14px);
+  transform: translateX(-18px);
+}
+
+.money-header-art img {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  object-position: center right;
+  display: block;
+  filter: saturate(0.92) contrast(1.04) brightness(0.82);
 }
 
 .money-table {
@@ -4005,14 +4055,31 @@ input:focus,
   }
 
   .money-header {
-    display: grid;
-    align-items: start;
+    grid-template-columns: 1fr;
+    align-items: end;
+    min-height: 260px;
   }
 
   .money-header h1,
   .statistics-header h1 {
     font-size: clamp(48px, 15vw, 76px);
     white-space: normal;
+  }
+
+  .money-header > div:first-child {
+    padding: 22px;
+  }
+
+  .money-header-art {
+    position: absolute;
+    inset: 0;
+    opacity: 0.62;
+  }
+
+  .money-header-art::before {
+    background:
+      linear-gradient(90deg, rgba(25, 26, 26, 0.94), rgba(25, 26, 26, 0.66), rgba(25, 26, 26, 0.22)),
+      linear-gradient(180deg, rgba(18, 20, 20, 0.2), var(--surface) 100%);
   }
 
   .money-row {

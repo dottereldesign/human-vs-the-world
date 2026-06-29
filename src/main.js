@@ -5,6 +5,7 @@ import nightElfIcon from './assets/race-night-elf-icon.png'
 import orcIcon from './assets/race-orc-icon.png'
 import chaemikoImage from './assets/chaemiko-card.png'
 import douyuLogo from './assets/stream-douyu-logo.png'
+import playerEarningsBgImage from './assets/player-earnings-bg-img.png'
 import infiFireballVideo from './assets/infi-card-fireball-effect.webm'
 import fortitudeImage from './assets/fortitude-card.png'
 import hawkImage from './assets/hawk-card.png'
@@ -3075,6 +3076,9 @@ const renderHumanMoneyPage = () => {
           <p class="eyebrow">All-time leaderboard</p>
           <h1>Player Earnings</h1>
           <p class="subline">The all-time prize money leaderboard for Human players.</p>
+        </div>
+        <div class="money-header-art" aria-hidden="true">
+          <img src="${playerEarningsBgImage}" alt="" />
         </div>
       </header>
       <div class="money-table" role="table" aria-label="Human earnings leaderboard">
