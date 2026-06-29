@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import { createReadStream, existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
 
+const isBuild = process.env.npm_lifecycle_event?.startsWith('build')
 const warsmashRoot = path.resolve('.codex_deps/warsmash-html/html/build/dist/webapp')
 const reforgedSandboxRoot = path.resolve('.wc3-assets/reforged')
 const reforgedSandboxManifestPath = path.join(reforgedSandboxRoot, 'manifest.json')
@@ -230,6 +231,14 @@ const resolveLocalWc3Asset = (relativePath, edition = 'legacy') => {
 
 export default defineConfig({
   base: './',
+  build: {
+    rollupOptions: {
+      input: isBuild ? { index: path.resolve('app.html') } : path.resolve('index.html'),
+      output: {
+        entryFileNames: 'assets/[name]-[hash].js',
+      },
+    },
+  },
   server: {
     watch: {
       ignored: ['**/.codex_deps/**'],

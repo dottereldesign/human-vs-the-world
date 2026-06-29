@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/finalize-build.mjs dist",
+    "build:docs": "vite build --outDir docs && node scripts/finalize-build.mjs docs",
     "preview": "vite preview",
     "update:replays": "node scripts/fetch-replays.mjs",
     "update:earnings": "python3 scripts/fetch-liquipedia-earnings.py",

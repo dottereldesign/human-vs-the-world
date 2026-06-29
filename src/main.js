@@ -877,7 +877,7 @@ const getRaceIcon = (race) => {
   }
 
   if (!iconMap[normalized]) return null
-  return iconMap[normalized].startsWith('/') ? iconMap[normalized] : `/race-icons/${iconMap[normalized]}.png`
+  return iconMap[normalized]
 }
 
 const getParsedPlayerForMatchup = (player, index, parsedPlayers) => {
