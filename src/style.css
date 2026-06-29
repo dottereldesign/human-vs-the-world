@@ -2391,7 +2391,6 @@ input:focus,
 
 .money-table {
   display: grid;
-  overflow: hidden;
   border-radius: 8px;
   background: var(--surface);
 }
@@ -2416,6 +2415,9 @@ input:focus,
 }
 
 .money-row.is-heading {
+  position: sticky;
+  top: calc(var(--header-height) + 8px);
+  z-index: 10;
   min-height: 42px;
   color: var(--muted);
   background: var(--field);
