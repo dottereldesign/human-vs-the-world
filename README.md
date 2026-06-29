@@ -1,6 +1,35 @@
 # Human vs The World
 
-Warcraft III Human replay dashboard built with Vite.
+A Warcraft III Human replay hub for studying top Human players, downloading 2026 replay packs, and reviewing parsed replay data.
+
+Human vs The World is built for players who want to get sharper with the Human race. It collects recent pro Human replays, makes them easier to filter, and turns parsed `.w3g` data into practical study tabs for build orders, APM, upgrades, items, chat, and matchup review.
+
+## Who It Is For
+
+- Human players looking for current practice material.
+- Players studying Fortitude, Sok, Chaemiko, Infi, HawK, Leon, and other top Human examples.
+- Coaches, analysts, and community members who want replay packs and quick replay breakdowns in one place.
+- Warcraft III players trying to compare maps, heroes, matchups, timings, item choices, and action patterns.
+
+## What It Does
+
+- Shows a Human-focused replay list with search, player filters, map filters, matchup filters, and starting hero filters.
+- Provides downloadable replay packs for featured Human players.
+- Parses local `.w3g` replay data with `w3gjs`.
+- Opens replay analysis tabs for overview, APM, build order, upgrades, items bought, items found, chat, and action counts.
+- Tracks aggregate Human stats such as hero pick rates, first hero picks, maps, matchups, items, upgrades, and common units/buildings.
+- Includes Human player rankings, all-time Human earnings, and a resources page for useful Warcraft III sites and tooling.
+- Keeps experimental renderer work separate from the production app, so the public site stays focused on replay study.
+
+## Data Sources
+
+The app uses locally generated static data. Visitors do not trigger live scraping or background fetching.
+
+- Warcraft3.info replay pages for replay metadata, downloads, and map images.
+- Warcraft3.info rankings for featured top Human players.
+- Liquipedia Warcraft III earnings pages for cached Human player earnings.
+- `w3gjs` for replay parsing and analysis.
+- Local Warcraft III icon assets for heroes, units, buildings, upgrades, items, and race icons.
 
 ## Run The App
 
@@ -33,9 +62,9 @@ npm run preview
 
 ## GitHub Pages
 
-This app is set up for GitHub Pages from the repository root. The production build keeps the dashboard, rankings, resources, statistics, and replay analysis tabs, using the prebuilt JSON files in `public/`.
+This app is set up for GitHub Pages from the repository root. The production build keeps the dashboard, rankings, resources, statistics, replay downloads, and replay analysis tabs, using the prebuilt JSON files in `public/`.
 
-The experimental renderer/Warsmash/w3gjs sandbox menu is local-dev only because those pages depend on local Warcraft III assets or Vite dev middleware. They stay in the source for private testing, but are hidden from production builds.
+The experimental renderer, Warsmash, and w3gjs sandbox pages are local-dev only because they depend on local Warcraft III assets or Vite dev middleware. They stay in the source for private testing, but are hidden from production builds.
 
 Publishing flow:
 
@@ -44,9 +73,9 @@ npm install
 npm run build:pages
 ```
 
-Commit and push the regenerated root files after `npm run build:pages`. Data is not fetched automatically by visitors; refresh it locally with the update scripts below, then rebuild.
+Commit and push the regenerated root files after `npm run build:pages`.
 
-Replay packs are published as normal static files for now. GitHub warns above 50 MiB and blocks files above 100 MiB, so larger or growing replay archives should move to GitHub Releases or another download host rather than staying in the repository forever.
+Replay packs are published as normal static files for now. GitHub warns above 50 MiB and blocks files above 100 MiB, so larger or growing replay archives should move to GitHub Releases or another download host instead of staying in the repository forever.
 
 ## Repository Layout
 
@@ -75,6 +104,20 @@ Refresh cached Human player earnings:
 ```sh
 npm run update:earnings
 ```
+
+Rebuild downloadable replay packs:
+
+```sh
+npm run build:packs
+```
+
+After updating data, run:
+
+```sh
+npm run build:pages
+```
+
+Then commit and push the updated static files.
 
 ## Experimental Sandbox
 

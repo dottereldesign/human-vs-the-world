@@ -1,6 +1,7 @@
 {
   "name": "human-vs-the-world",
   "version": "0.0.0",
+  "description": "Warcraft III Human replay hub for studying pro replays, replay packs, and parsed training data.",
   "private": true,
   "type": "module",
   "scripts": {
