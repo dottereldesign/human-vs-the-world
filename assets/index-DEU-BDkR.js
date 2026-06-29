@@ -1099,7 +1099,10 @@ const result = await parser.parse("replay.w3g");</code></pre>
         ${e.length?e.map(e=>`
                     <div class="money-row" role="row">
                       <span>#${N(e.rank)}</span>
-                      <strong>${N(e.name)}</strong>
+                      <strong class="money-player-name">
+                        <img src="${t}" alt="" aria-hidden="true" />
+                        <span>${N(e.name)}</span>
+                      </strong>
                       <span>${N(e.flag||``)} ${N(e.country||`Unknown`)}</span>
                       <span>${N(e.race||`Human`)}</span>
                       <strong class="money-amount">${N(e.earningsLabel)}</strong>

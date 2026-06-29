@@ -2454,6 +2454,27 @@ input:focus,
   color: var(--heading);
 }
 
+.money-player-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+.money-player-name img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.money-player-name span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .money-amount {
   color: #d8a847;
   text-shadow: 0 0 18px rgba(216, 168, 71, 0.16);

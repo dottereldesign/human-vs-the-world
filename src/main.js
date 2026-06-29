@@ -3092,7 +3092,10 @@ const renderHumanMoneyPage = () => {
                   (player) => `
                     <div class="money-row" role="row">
                       <span>#${escapeHtml(player.rank)}</span>
-                      <strong>${escapeHtml(player.name)}</strong>
+                      <strong class="money-player-name">
+                        <img src="${humanIcon}" alt="" aria-hidden="true" />
+                        <span>${escapeHtml(player.name)}</span>
+                      </strong>
                       <span>${escapeHtml(player.flag || '')} ${escapeHtml(player.country || 'Unknown')}</span>
                       <span>${escapeHtml(player.race || 'Human')}</span>
                       <strong class="money-amount">${escapeHtml(player.earningsLabel)}</strong>
