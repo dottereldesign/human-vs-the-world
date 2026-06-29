@@ -527,7 +527,7 @@ const renderWc3ObjectIcon = (id, label = labelForId(id)) => {
     return `<span class="wc3-object-icon is-empty" aria-hidden="true">${escapeHtml(String(id || '?').slice(0, 1))}</span>`
   }
 
-  return `<img class="wc3-object-icon" src="${escapeHtml(icon)}" alt="${escapeHtml(label)}" loading="lazy" />`
+  return `<img class="wc3-object-icon" src="${escapeHtml(normalizePublicPath(icon))}" alt="${escapeHtml(label)}" loading="lazy" />`
 }
 
 const renderHeroBadge = (hero, { compact = false } = {}) => {
@@ -1491,7 +1491,7 @@ const renderReplayTheater = () => {
           <section class="replay-theater-map">
             ${
               replay.mapImage?.localPath
-                ? `<img src="${escapeHtml(replay.mapImage.localPath)}" alt="${escapeHtml(replay.map)} map thumbnail" />`
+                ? `<img src="${escapeHtml(normalizePublicPath(replay.mapImage.localPath))}" alt="${escapeHtml(replay.map)} map thumbnail" />`
                 : `<div class="map-placeholder" aria-hidden="true">${escapeHtml(replay.mapShort || 'WC3')}</div>`
             }
             <div class="replay-theater-map-overlay">
@@ -1668,7 +1668,7 @@ const renderReplayRows = (replays) => {
           <div class="replay-map">
             ${
               replay.mapImage?.localPath
-                ? `<img src="${escapeHtml(replay.mapImage.localPath)}" alt="${escapeHtml(replay.map)} map thumbnail" loading="lazy" />`
+                ? `<img src="${escapeHtml(normalizePublicPath(replay.mapImage.localPath))}" alt="${escapeHtml(replay.map)} map thumbnail" loading="lazy" />`
                 : `<div class="map-placeholder" aria-hidden="true">${escapeHtml(replay.mapShort || 'WC3')}</div>`
             }
             <div>
@@ -1979,7 +1979,7 @@ const renderRendererPage = () => {
         <section class="renderer-stage" aria-label="Renderer preview">
           ${
             testReplay?.mapImage?.localPath
-              ? `<img src="${escapeHtml(testReplay.mapImage.localPath)}" alt="${escapeHtml(testReplay.map)} map thumbnail" loading="lazy" />`
+              ? `<img src="${escapeHtml(normalizePublicPath(testReplay.mapImage.localPath))}" alt="${escapeHtml(testReplay.map)} map thumbnail" loading="lazy" />`
               : `<div class="renderer-placeholder">WC3</div>`
           }
           <div class="renderer-stage-overlay">
