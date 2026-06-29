@@ -149,9 +149,6 @@ let playerCardIntroPlayed = false
 let playerCardIntroTimer = null
 let logoIntroPlayed = false
 let logoIntroTimer = null
-let colorTheme = ['dark', 'light'].includes(localStorage.getItem('wc3-color-theme'))
-  ? localStorage.getItem('wc3-color-theme')
-  : 'dark'
 const REPLAYS_PER_PAGE = 25
 const replayModalTabs = [
   { id: 'overview', label: 'Overview' },
@@ -365,21 +362,6 @@ const allowedMapKeys = new Set(allowedMapPool.map(normalizeMapName))
 const isRandomSpellsMap = (map) => /\brandom spells\b/i.test(String(map || ''))
 
 const isAllowedMap = (map) => allowedMapKeys.has(normalizeMapName(map)) && !isRandomSpellsMap(map)
-
-const applyColorTheme = ({ instant = false } = {}) => {
-  if (instant) document.documentElement.classList.add('is-theme-switching')
-  document.documentElement.dataset.theme = colorTheme
-
-  if (instant) {
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        document.documentElement.classList.remove('is-theme-switching')
-      })
-    })
-  }
-}
-
-applyColorTheme()
 
 const getActiveRoute = () => {
   const slug = window.location.hash.replace('#/', '')
@@ -3387,18 +3369,6 @@ const setupPlayerCardCarousel = () => {
   )
 }
 
-const setupThemeToggle = () => {
-  const button = document.querySelector('.theme-button')
-  if (!button) return
-
-  button.addEventListener('click', () => {
-    colorTheme = colorTheme === 'dark' ? 'light' : 'dark'
-    localStorage.setItem('wc3-color-theme', colorTheme)
-    applyColorTheme({ instant: true })
-    button.setAttribute('aria-label', colorTheme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme')
-  })
-}
-
 const renderInfoLinks = (links) => `
   <ul class="app-info-link-list">
     ${links
@@ -3737,15 +3707,6 @@ const render = () => {
       <a class="brand ${logoIntroPlayed ? '' : 'with-logo-intro'}" href="#/" aria-label="Human vs The World home">
         <img src="${humanVsTheWorldLogo}" alt="Human vs The World" />
       </a>
-      <button class="theme-button" type="button" aria-label="${colorTheme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}">
-        <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="12" cy="12" r="4" />
-          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
-        </svg>
-        <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 3a6.7 6.7 0 0 0 8.9 8.9A9 9 0 1 1 12 3Z" />
-        </svg>
-      </button>
       <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
         <span class="menu-button-icon" aria-hidden="true">
           <span></span>
@@ -3831,7 +3792,6 @@ const render = () => {
   setupReplayAnalysisControls()
   setupPlayerFilterTriggers()
   setupPlayerCardCarousel()
-  setupThemeToggle()
   setupAppInfoPanel()
   setupWarsmashViewerControls()
 
