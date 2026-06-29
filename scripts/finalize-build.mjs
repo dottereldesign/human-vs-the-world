@@ -2,9 +2,9 @@ import { copyFileSync, existsSync } from 'node:fs'
 import path from 'node:path'
 
 const outDir = process.argv[2] || 'dist'
-const appHtml = path.resolve(outDir, 'app.html')
+const appHtml = ['build-entry.html', 'app.html'].map((file) => path.resolve(outDir, file)).find(existsSync)
 const indexHtml = path.resolve(outDir, 'index.html')
 
-if (existsSync(appHtml)) {
+if (appHtml) {
   copyFileSync(appHtml, indexHtml)
 }

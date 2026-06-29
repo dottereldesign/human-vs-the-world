@@ -2,16 +2,16 @@ import './style.css'
 import humanIcon from './assets/human.png'
 import nightElfIcon from './assets/nightelf-icon.png'
 import orcIcon from './assets/orc-icon.png'
-import chaemikoImage from './assets/chaimekoimg.png'
+import chaemikoImage from './assets/chaemiko-card.png'
 import douyuLogo from './assets/douyu.png'
 import infiFireballVideo from './assets/infi-fireball.webm'
-import fortitudeImage from './assets/fortitudeimg.png'
-import hawkImage from './assets/hawkimg.png'
+import fortitudeImage from './assets/fortitude-card.png'
+import hawkImage from './assets/hawk-card.png'
 import humanVsTheWorldLogo from './assets/humanvstheworld.png'
-import infiImage from './assets/infiimg.png'
-import leonImage from './assets/leonwc3.png'
+import infiImage from './assets/infi-card.png'
+import leonImage from './assets/leon-card.png'
 import liquipediaLogo from './assets/liquipedia.png'
-import sokImage from './assets/sokimg.png'
+import sokImage from './assets/sok-card.png'
 import twitchLogo from './assets/twitch.svg'
 import undeadIcon from './assets/undead-icon.png'
 import wc3IconManifest from './wc3-icon-manifest.json'
@@ -365,7 +365,7 @@ const getActiveRoute = () => {
   const slug = window.location.hash.replace('#/', '')
   if (!slug) return { type: 'all' }
   if (slug === 'builds') return { type: 'builds' }
-  if (slug === 'human-money') return { type: 'human-money' }
+  if (slug === 'player-earnings' || slug === 'human-money') return { type: 'player-earnings' }
   if (slug === 'statistics') return { type: 'statistics' }
   if (showLocalSandbox && slug === 'renderer') return { type: 'renderer' }
   if (showLocalSandbox && slug === 'wc3-replay-viewer') return { type: 'wc3-replay-viewer' }
@@ -1732,8 +1732,8 @@ const buildsLink = (className = '') => `
   </a>
 `
 
-const humanMoneyLink = (className = '') => `
-  <a class="${className}" href="#/human-money" data-page-link>
+const playerEarningsLink = (className = '') => `
+  <a class="${className}" href="#/player-earnings" data-page-link>
     ${gameIcon('coins')}
     <span>Player Earnings</span>
   </a>
@@ -3740,7 +3740,7 @@ const render = () => {
         <nav class="menu-nav" aria-label="Menu">
           ${allLink(route.type === 'all' ? 'is-active' : '')}
           ${buildsLink(route.type === 'builds' ? 'is-active' : '')}
-          ${humanMoneyLink(route.type === 'human-money' ? 'is-active' : '')}
+          ${playerEarningsLink(route.type === 'player-earnings' ? 'is-active' : '')}
           ${statisticsLink(route.type === 'statistics' ? 'is-active' : '')}
           ${resourcesLink(route.type === 'resources' ? 'is-active' : '')}
         </nav>
@@ -3759,7 +3759,7 @@ const render = () => {
       ${
         route.type === 'builds'
           ? renderBuildsPage()
-          : route.type === 'human-money'
+          : route.type === 'player-earnings'
             ? renderHumanMoneyPage()
             : route.type === 'statistics'
               ? renderStatisticsPage()

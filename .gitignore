@@ -10,6 +10,7 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+docs
 *.local
 
 # Local/private WC3 research assets and generated workspaces

@@ -1,12 +1,12 @@
 {
-  "name": "wc3-pipeline",
+  "name": "human-vs-the-world",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build && node scripts/finalize-build.mjs dist",
-    "build:docs": "vite build --outDir docs && node scripts/finalize-build.mjs docs",
+    "build:pages": "npm run build && node scripts/sync-pages-root.mjs",
     "preview": "vite preview",
     "update:replays": "node scripts/fetch-replays.mjs",
     "update:earnings": "python3 scripts/fetch-liquipedia-earnings.py",

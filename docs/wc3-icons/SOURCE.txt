@@ -1,3 +1,0 @@
-Source: https://wc3icons.coffbox.win/assets/warcraft3_icons.zip
-Site: https://wc3icons.coffbox.win/
-Imported subset: icons referenced by parsed replay timeline object IDs.

@@ -233,7 +233,7 @@ export default defineConfig({
   base: './',
   build: {
     rollupOptions: {
-      input: isBuild ? { index: path.resolve('app.html') } : path.resolve('index.html'),
+      input: isBuild ? { index: path.resolve('build-entry.html') } : path.resolve('index.html'),
       output: {
         entryFileNames: 'assets/[name]-[hash].js',
       },
@@ -245,6 +245,24 @@ export default defineConfig({
     },
   },
   plugins: [
+    {
+      name: 'serve-dev-app-entry',
+      apply: 'serve',
+      configureServer(server) {
+        server.middlewares.use(async (request, response, next) => {
+          const requestPath = new URL(request.url || '/', 'http://127.0.0.1').pathname
+          if (requestPath !== '/' && requestPath !== '/index.html') {
+            next()
+            return
+          }
+
+          const html = readFileSync(path.resolve('build-entry.html'), 'utf8')
+          const transformed = await server.transformIndexHtml(request.url || '/', html)
+          response.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' })
+          response.end(transformed)
+        })
+      },
+    },
     {
       name: 'serve-warsmash-webapp',
       configureServer(server) {
