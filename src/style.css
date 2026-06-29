@@ -1792,71 +1792,59 @@ input:focus,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  min-height: 42px;
-  padding: 0 16px 0 10px;
-  border: 1px solid rgba(191, 191, 191, 0.14);
-  border-radius: 8px;
-  color: var(--heading);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent),
-    var(--field);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.05),
-    0 12px 24px rgba(0, 0, 0, 0.24);
+  gap: 8px;
+  min-height: 38px;
+  padding: 0 13px 0 11px;
+  border: 1px solid rgba(191, 191, 191, 0.12);
+  border-radius: 6px;
+  color: var(--body);
+  background: rgba(255, 255, 255, 0.035);
+  box-shadow: none;
   cursor: pointer;
-  font-size: 13px;
-  font-weight: 900;
+  font-size: 12px;
+  font-weight: 800;
   justify-self: end;
   letter-spacing: 0;
   transition:
+    background-color 160ms ease,
     border-color 160ms ease,
     color 160ms ease,
-    box-shadow 160ms ease,
-    transform 160ms ease,
-    background 160ms ease;
+    transform 160ms ease;
 }
 
 .replay-analysis-button:hover,
 .warsmash-start-button:hover,
 .replay-row:hover .replay-analysis-button {
-  color: var(--white);
-  background:
-    linear-gradient(180deg, rgba(72, 160, 199, 0.24), transparent),
-    #202526;
-  border-color: rgba(72, 160, 199, 0.52);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.08),
-    0 0 20px rgba(72, 160, 199, 0.18),
-    0 16px 30px rgba(0, 0, 0, 0.3);
-  transform: translateY(-1px);
+  color: var(--heading);
+  background: rgba(72, 160, 199, 0.11);
+  border-color: rgba(72, 160, 199, 0.32);
 }
 
 .analyze-icon {
   display: grid;
   place-items: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
-  color: #111313;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.34), transparent),
-    #d8a847;
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.18),
-    0 0 14px rgba(216, 168, 71, 0.2);
+  width: 18px;
+  height: 18px;
+  color: var(--link);
+}
+
+.replay-analysis-button .analyze-icon,
+.warsmash-start-button .analyze-icon {
+  color: var(--link);
+}
+
+.replay-analysis-button:hover .analyze-icon,
+.warsmash-start-button:hover .analyze-icon,
+.replay-row:hover .replay-analysis-button .analyze-icon {
+  color: #69b8d8;
 }
 
 .analyze-icon svg {
-  width: 15px;
-  height: 15px;
-  color: #111313;
-}
-
-.analyze-icon path {
+  width: 18px;
+  height: 18px;
   fill: none;
-  stroke: #111313;
-  stroke-width: 2.2;
+  stroke: currentColor;
+  stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
 }

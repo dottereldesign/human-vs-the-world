@@ -598,7 +598,10 @@ const gameIcon = (name, className = '') => `
 
 const analyzeIcon = () => `
   <span class="analyze-icon" aria-hidden="true">
-    ${gameIcon('search')}
+    <svg viewBox="0 0 20 20" focusable="false">
+      <circle cx="8.5" cy="8.5" r="4.75" />
+      <path d="m12.25 12.25 4 4" />
+    </svg>
   </span>
 `
 
