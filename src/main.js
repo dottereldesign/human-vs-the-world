@@ -3719,6 +3719,7 @@ const detectWarsmashOnboardingPlatform = () => {
 
 const render = () => {
   const route = getActiveRoute()
+  const isHomeRoute = route.type === 'all'
 
   document.querySelector('#app').innerHTML = `
     <header class="site-header">
@@ -3756,7 +3757,7 @@ const render = () => {
       </div>
     </aside>
 
-    <main class="page-shell">
+    <main class="page-shell ${isHomeRoute ? 'page-shell-home' : 'page-shell-subpage'}">
       ${
         route.type === 'builds'
           ? renderBuildsPage()
