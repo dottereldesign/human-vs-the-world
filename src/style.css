@@ -345,8 +345,8 @@ body.has-scrolled-header .brand img {
   margin-top: 24px;
 }
 
-.menu-nav a,
-.menu-nav span {
+.menu-nav > a,
+.menu-nav > span {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -357,13 +357,13 @@ body.has-scrolled-header .brand img {
   font-size: 28px;
 }
 
-.menu-nav span.is-disabled {
+.menu-nav > span.is-disabled {
   color: var(--muted);
   cursor: not-allowed;
   opacity: 0.54;
 }
 
-.menu-nav span.is-disabled small {
+.menu-nav > span.is-disabled small {
   margin-left: auto;
   color: var(--muted);
   font-size: 13px;
@@ -421,7 +421,7 @@ body.has-scrolled-header .brand img {
   filter: drop-shadow(0 0 10px rgba(72, 160, 199, 0.18));
 }
 
-.menu-nav span.is-disabled .game-icon {
+.menu-nav > span.is-disabled .game-icon {
   color: var(--muted);
   filter: none;
 }
@@ -3931,8 +3931,8 @@ input:focus,
     padding: 20px;
   }
 
-  .menu-nav a,
-  .menu-nav span {
+  .menu-nav > a,
+  .menu-nav > span {
     min-height: 68px;
     font-size: 23px;
   }
