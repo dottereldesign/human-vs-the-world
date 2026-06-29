@@ -5,20 +5,10 @@
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Human vs The World</title>
+    <script type="module" crossorigin src="./assets/index-CC8ikBW_.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CMW0bxBg.css">
   </head>
   <body>
     <div id="app"></div>
-    <script>
-      const isLocalDev = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname)
-
-      if (!isLocalDev) {
-        const basePath = window.location.pathname.endsWith('/')
-          ? window.location.pathname
-          : `${window.location.pathname}/`
-        window.location.replace(`${window.location.origin}${basePath}docs/${window.location.hash}`)
-      } else {
-        import('/src/main.js')
-      }
-    </script>
   </body>
 </html>
