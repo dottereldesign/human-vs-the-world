@@ -3730,6 +3730,7 @@ const render = () => {
       </button>
     </header>
 
+    <div class="menu-backdrop" data-menu-close aria-hidden="true"></div>
     <aside class="menu-panel" id="site-menu" aria-hidden="true">
       <div class="menu-panel-inner">
         <p class="eyebrow">Browse</p>
@@ -3779,10 +3780,12 @@ const render = () => {
 
   const header = document.querySelector('.site-header')
   const menu = document.querySelector('.menu-panel')
+  const menuBackdrop = document.querySelector('.menu-backdrop')
   const menuButton = document.querySelector('.menu-button')
 
   const closeMenu = () => {
     menu.classList.remove('is-open')
+    menuBackdrop?.classList.remove('is-open')
     menu.setAttribute('aria-hidden', 'true')
     menuButton.setAttribute('aria-expanded', 'false')
     menuButton.setAttribute('aria-label', 'Open menu')
@@ -3790,10 +3793,13 @@ const render = () => {
 
   menuButton.addEventListener('click', () => {
     const isOpen = menu.classList.toggle('is-open')
+    menuBackdrop?.classList.toggle('is-open', isOpen)
     menu.setAttribute('aria-hidden', String(!isOpen))
     menuButton.setAttribute('aria-expanded', String(isOpen))
     menuButton.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu')
   })
+
+  menuBackdrop?.addEventListener('click', closeMenu)
 
   document.querySelectorAll('[data-page-link]').forEach((link) => {
     link.addEventListener('click', closeMenu)
@@ -3841,9 +3847,11 @@ window.addEventListener('keydown', (event) => {
   }
   closeFilterPopover()
   const menu = document.querySelector('.menu-panel')
+  const menuBackdrop = document.querySelector('.menu-backdrop')
   const menuButton = document.querySelector('.menu-button')
   if (!menu || !menuButton) return
   menu.classList.remove('is-open')
+  menuBackdrop?.classList.remove('is-open')
   menu.setAttribute('aria-hidden', 'true')
   menuButton.setAttribute('aria-expanded', 'false')
   menuButton.setAttribute('aria-label', 'Open menu')

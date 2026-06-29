@@ -318,18 +318,61 @@ body.has-scrolled-header .brand img {
     calc(8px + var(--header-height) + 8px)
     8px
     8px
-    8px;
+    auto;
   z-index: 50;
-  display: none;
+  width: min(50vw, 760px);
+  min-width: 460px;
   overflow: auto;
   min-height: 0;
   border-radius: 28px;
   background: var(--surface);
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.48);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(calc(100% + 24px));
+  transition:
+    transform 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 260ms ease,
+    visibility 0s linear 360ms;
 }
 
 .menu-panel.is-open {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  transition:
+    transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 240ms ease,
+    visibility 0s;
+}
+
+.menu-backdrop {
+  position: fixed;
+  inset:
+    calc(8px + var(--header-height) + 8px)
+    8px
+    8px
+    8px;
+  z-index: 45;
+  border-radius: 28px;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.42)),
+    rgba(0, 0, 0, 0.28);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 280ms ease,
+    visibility 0s linear 280ms;
+}
+
+.menu-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition:
+    opacity 320ms ease,
+    visibility 0s;
 }
 
 .menu-panel-inner {
@@ -4004,6 +4047,15 @@ input:focus,
 
   .menu-panel-inner {
     padding: 20px;
+  }
+
+  .menu-panel {
+    width: min(92vw, 460px);
+    min-width: 0;
+  }
+
+  .menu-backdrop {
+    border-radius: 20px;
   }
 
   .menu-nav > a,
