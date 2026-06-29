@@ -319,7 +319,7 @@ body.has-scrolled-header .brand img {
     8px
     8px
     8px;
-  z-index: 15;
+  z-index: 30;
   display: none;
   overflow: auto;
   min-height: 0;
@@ -345,7 +345,8 @@ body.has-scrolled-header .brand img {
   margin-top: 24px;
 }
 
-.menu-nav a {
+.menu-nav a,
+.menu-nav span {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -354,6 +355,21 @@ body.has-scrolled-header .brand img {
   border-radius: 18px;
   background: var(--bg);
   font-size: 28px;
+}
+
+.menu-nav span.is-disabled {
+  color: var(--muted);
+  cursor: not-allowed;
+  opacity: 0.54;
+}
+
+.menu-nav span.is-disabled small {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .menu-sandbox {
@@ -403,6 +419,11 @@ body.has-scrolled-header .brand img {
   height: 34px;
   color: var(--link);
   filter: drop-shadow(0 0 10px rgba(72, 160, 199, 0.18));
+}
+
+.menu-nav span.is-disabled .game-icon {
+  color: var(--muted);
+  filter: none;
 }
 
 .menu-nav a:hover,
@@ -3878,7 +3899,8 @@ input:focus,
     padding: 20px;
   }
 
-  .menu-nav a {
+  .menu-nav a,
+  .menu-nav span {
     min-height: 68px;
     font-size: 23px;
   }

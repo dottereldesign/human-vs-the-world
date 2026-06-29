@@ -363,10 +363,11 @@
     <span>Home</span>
   </a>
 `,Yt=(e=``)=>`
-  <a class="${e}" href="#/builds" data-page-link>
+  <span class="${e} is-disabled" aria-disabled="true">
     ${B(`scroll`)}
     <span>Builds</span>
-  </a>
+    <small>Coming soon</small>
+  </span>
 `,Xt=(e=``)=>`
   <a class="${e}" href="#/player-earnings" data-page-link>
     ${B(`coins`)}
@@ -1071,7 +1072,7 @@ const result = await parser.parse("replay.w3g");</code></pre>
       <div>
         <p class="eyebrow">Warcraft III directory</p>
         <h1>Resources</h1>
-        <p class="subline">Menu artwork uses <a href="https://game-icons.net/" target="_blank" rel="noreferrer">Game-icons.net</a> SVGs under CC BY 3.0.</p>
+        <p class="subline">Active Warcraft III hubs, tooling, replay libraries, and community references for building the Human vs The World knowledge base.</p>
       </div>
     </header>
     <div class="resources-grid">
