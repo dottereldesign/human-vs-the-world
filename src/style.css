@@ -1643,7 +1643,7 @@ input:focus,
   grid-template-columns: minmax(220px, 290px) minmax(0, 1fr) auto;
   min-height: 104px;
   padding: 16px 18px;
-  cursor: pointer;
+  cursor: default;
   transition:
     background 160ms ease,
     box-shadow 160ms ease,
@@ -1652,9 +1652,7 @@ input:focus,
 
 .replay-row:hover {
   background: #1c1f1f;
-  box-shadow:
-    inset 2px 0 0 var(--link),
-    0 14px 38px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.14);
 }
 
 .replay-row:focus-visible {
@@ -1859,12 +1857,21 @@ input:focus,
     transform 160ms ease;
 }
 
-.replay-analysis-button:hover,
-.warsmash-start-button:hover,
-.replay-row:hover .replay-analysis-button {
+.replay-analysis-button:not(:disabled):hover,
+.warsmash-start-button:hover {
   color: var(--heading);
   background: rgba(72, 160, 199, 0.11);
   border-color: rgba(72, 160, 199, 0.32);
+}
+
+.replay-analysis-button.is-muted,
+.replay-analysis-button:disabled {
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.026);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 0.58;
 }
 
 .analyze-icon {
@@ -1880,10 +1887,14 @@ input:focus,
   color: var(--link);
 }
 
-.replay-analysis-button:hover .analyze-icon,
-.warsmash-start-button:hover .analyze-icon,
-.replay-row:hover .replay-analysis-button .analyze-icon {
+.replay-analysis-button:not(:disabled):hover .analyze-icon,
+.warsmash-start-button:hover .analyze-icon {
   color: #69b8d8;
+}
+
+.replay-analysis-button.is-muted .analyze-icon,
+.replay-analysis-button:disabled .analyze-icon {
+  color: var(--muted);
 }
 
 .analyze-icon svg {

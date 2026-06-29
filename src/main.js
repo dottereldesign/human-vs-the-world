@@ -606,6 +606,13 @@ const analyzeIcon = () => `
   </span>
 `
 
+const analysisComingSoonButton = (label = 'Coming soon') => `
+  <button class="replay-analysis-button is-muted" type="button" disabled>
+    ${analyzeIcon()}
+    <span>${escapeHtml(label)}</span>
+  </button>
+`
+
 const serviceBadge = ({ key, short, icon }, label) => `
   <span class="service-icon service-icon-${escapeHtml(key)}" aria-hidden="true">
     ${icon ? `<img src="${icon}" alt="" loading="lazy" />` : escapeHtml(short)}
@@ -1521,7 +1528,7 @@ const renderReplayTheater = () => {
             <div class="replay-theater-buttons">
               <button type="button" data-theater-play>${replayTheaterPlaying ? 'Pause' : 'Play parsed timeline'}</button>
               <button type="button" data-theater-reset>Restart</button>
-              <button class="replay-analysis-button" type="button" data-replay-detail="${escapeHtml(`${replay.sourceSlug}:${replay.id}`)}">Open Analysis Tabs</button>
+              ${analysisComingSoonButton('Analysis coming soon')}
             </div>
           </section>
           <div class="replay-theater-columns">
@@ -1674,7 +1681,7 @@ const renderReplayRows = (replays) => {
       const durationLabel = analysis?.durationLabel || replay.durationLabel
 
       return `
-        <article class="replay-row" data-replay-detail="${escapeHtml(`${replay.sourceSlug}:${replay.id}`)}" role="button" tabindex="0" aria-label="Analyze ${escapeHtml(replay.map)} replay">
+        <article class="replay-row">
           <div class="replay-map">
             ${
               replay.mapImage?.localPath
@@ -1694,10 +1701,7 @@ const renderReplayRows = (replays) => {
               <a href="${replay.downloadUrl}" target="_blank" rel="noreferrer">Download</a>
             </div>
           </div>
-          <button class="replay-analysis-button" type="button" data-replay-detail="${escapeHtml(`${replay.sourceSlug}:${replay.id}`)}">
-            ${analyzeIcon()}
-            <span>Analyze</span>
-          </button>
+          ${analysisComingSoonButton('Coming soon')}
         </article>
       `
     })
@@ -1750,10 +1754,11 @@ const playerEarningsLink = (className = '') => `
 `
 
 const statisticsLink = (className = '') => `
-  <a class="${className}" href="#/statistics" data-page-link>
+  <span class="${className} is-disabled" aria-disabled="true">
     ${gameIcon('chart')}
     <span>Statistics</span>
-  </a>
+    <small>Coming soon</small>
+  </span>
 `
 
 const rendererLink = (className = '') => `
@@ -2012,10 +2017,7 @@ const renderRendererPage = () => {
                   <div><dt>Players</dt><dd>${renderMatchupWithIcons(testReplay, parsedPlayers)}</dd></div>
                 </dl>
                 <div class="renderer-actions">
-                  <button class="replay-analysis-button" type="button" data-replay-detail="${escapeHtml(`${testReplay.sourceSlug}:${testReplay.id}`)}">
-                    ${analyzeIcon()}
-                    <span>Open Analysis</span>
-                  </button>
+                  ${analysisComingSoonButton('Analysis coming soon')}
                   <a href="${escapeHtml(testReplay.downloadUrl)}" target="_blank" rel="noreferrer">Download replay</a>
                 </div>
               `
@@ -2431,10 +2433,7 @@ const renderWc3ReplayViewerPage = () => {
                   <div><dt>Players</dt><dd>${renderMatchupWithIcons(testReplay, parsedPlayers)}</dd></div>
                 </dl>
                 <div class="renderer-actions">
-                  <button class="replay-analysis-button" type="button" data-replay-detail="${escapeHtml(`${testReplay.sourceSlug}:${testReplay.id}`)}">
-                    ${analyzeIcon()}
-                    <span>Open Analysis</span>
-                  </button>
+                  ${analysisComingSoonButton('Analysis coming soon')}
                   ${
                     engineReady
                       ? `<button class="warsmash-start-button" type="button" data-warsmash-watch="${escapeHtml(testReplayKey)}">${analyzeIcon()}<span>${selectedEditionPlayable ? 'Start Engine Test' : 'Start Reforged Engine Test'}</span></button>`
@@ -2829,10 +2828,7 @@ const result = await parser.parse("replay.w3g");</code></pre>
                   <div><dt>Map file</dt><dd><code>${escapeHtml(analysis?.map?.file || testReplay.map || 'Unknown')}</code></dd></div>
                   <div><dt>Local file</dt><dd><code>${escapeHtml(testReplay.localPath || analysis?.sourceFile || '')}</code></dd></div>
                 </dl>
-                <button class="replay-analysis-button" type="button" data-replay-detail="${escapeHtml(`${testReplay.sourceSlug}:${testReplay.id}`)}">
-                  ${analyzeIcon()}
-                  <span>Open Full Analysis Tabs</span>
-                </button>
+                ${analysisComingSoonButton('Analysis coming soon')}
               `
               : '<p>No replay cache loaded yet.</p>'
           }
