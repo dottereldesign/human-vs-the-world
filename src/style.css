@@ -125,7 +125,7 @@ code {
 .site-header {
   position: sticky;
   top: 8px;
-  z-index: 20;
+  z-index: 40;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -426,16 +426,16 @@ body.has-scrolled-header .brand img {
   filter: none;
 }
 
-.menu-nav a:hover,
-.menu-nav a.is-active,
+.menu-nav > a:hover,
+.menu-nav > a.is-active,
 .menu-sandbox-nav a:hover,
 .menu-sandbox-nav a.is-active {
   background: var(--field);
   color: var(--white);
 }
 
-.menu-nav a:hover .game-icon,
-.menu-nav a.is-active .game-icon,
+.menu-nav > a:hover .game-icon,
+.menu-nav > a.is-active .game-icon,
 .menu-sandbox-nav a:hover .game-icon,
 .menu-sandbox-nav a.is-active .game-icon {
   color: #f4c76a;
