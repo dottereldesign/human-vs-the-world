@@ -1206,15 +1206,19 @@ const result = await parser.parse("replay.w3g");</code></pre>
 `,Gn=()=>`
   <footer class="site-footer">
     <div class="site-footer-inner">
+      <span class="footer-bnet-tag" aria-label="Battle.net tag Jamie#12461">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3.1c2.5 0 4.54 1.52 4.54 3.39 0 1.04-.63 1.97-1.62 2.59 2.37.3 4.18 1.64 4.18 3.26 0 1.18-.96 2.21-2.41 2.82.32.38.5.81.5 1.27 0 1.87-2.04 3.39-4.54 3.39-1.77 0-3.3-.76-4.04-1.87-.63.21-1.32.32-2.04.32-2.5 0-4.54-1.52-4.54-3.39 0-1.42 1.17-2.63 2.82-3.14-.33-.39-.52-.84-.52-1.31 0-1.51 1.34-2.8 3.21-3.23-.05-.22-.08-.45-.08-.69C7.46 4.62 9.5 3.1 12 3.1Zm0 1.55c-1.59 0-2.88.82-2.88 1.84 0 .31.12.6.34.86.8-.04 1.62.07 2.4.35.52-.77 1.34-1.35 2.33-1.64-.33-.81-1.2-1.41-2.19-1.41Zm2.12 2.96c-.48.16-.9.42-1.21.76.54.36 1 .82 1.34 1.34.56-.31.9-.75.9-1.24 0-.3-.36-.62-1.03-.86Zm-5.3 1.16c-1.55.16-2.77.88-2.77 1.66 0 .3.19.59.52.84.74-.08 1.53 0 2.26.26.28-.58.7-1.11 1.22-1.55-.36-.67-.8-1.04-1.23-1.21Zm2.75.72c-.56.42-.98.96-1.19 1.56.53.34.98.78 1.33 1.27.69-.22 1.42-.31 2.14-.26-.18-1.03-1.04-1.98-2.28-2.57Zm3.37 2.21c-.38.06-.76.16-1.1.31.24.48.37 1 .37 1.52 0 .2-.02.39-.06.58 1.3.19 2.29.82 2.29 1.6 0 .24-.09.47-.25.68.79-.37 1.29-.86 1.29-1.41 0-1.02-1.14-1.91-2.54-2.28ZM8.6 12.78c-.49-.16-.99-.2-1.45-.12.31.31.68.58 1.1.8.08-.23.2-.45.35-.68Zm2.19.44c-.22-.3-.5-.57-.84-.78-.08.23-.12.46-.12.7 0 .93.76 1.78 1.85 2.23.4-.39.68-.86.8-1.37-.66-.13-1.25-.39-1.69-.78Zm2.99.48c-.04.7-.3 1.36-.73 1.93.67.06 1.3.2 1.85.42.15-.22.24-.45.24-.7 0-.66-.56-1.27-1.36-1.65Zm-7.53.03c-1.45.23-2.56.98-2.56 1.87 0 1.02 1.29 1.84 2.88 1.84.47 0 .91-.07 1.3-.2-.18-.43-.28-.88-.28-1.35 0-.52.12-1.02.34-1.48-.62-.15-1.19-.38-1.68-.68Zm3.05 1.33c-.12.26-.18.54-.18.83 0 .2.03.39.09.58.34-.23.65-.5.91-.8-.3-.17-.58-.37-.82-.61Zm2.54 1.19c-.44.46-.98.85-1.59 1.13.51.56 1.39.91 2.4.91 1.59 0 2.88-.82 2.88-1.84 0-.03 0-.06-.01-.09-1.03-.32-2.32-.38-3.68-.11Z" />
+        </svg>
+        <span>Jamie#12461</span>
+      </span>
       <a class="footer-github-link" href="https://github.com/dottereldesign" target="_blank" rel="noreferrer" aria-label="Open dottereldesign on GitHub">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.77.6-3.36-1.18-3.36-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.21-.25-4.54-1.11-4.54-4.93 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03A9.4 9.4 0 0 1 12 6.02c.85 0 1.7.11 2.5.34 1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.83-2.34 4.67-4.56 4.92.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" />
         </svg>
         <span>dottereldesign</span>
       </a>
-      <span>Battle.net Jamie#12461</span>
-      <span>aka Xypher</span>
-      <span>Portrait and visual accent images created with AI-assisted tools.</span>
+      <span class="footer-ai-note">Portrait and visual accent images created with AI-assisted tools.</span>
     </div>
   </footer>
 `,Kn=()=>{document.querySelector(`[data-info-toggle]`)?.addEventListener(`click`,()=>{E=!E,$()}),document.querySelector(`[data-info-close]`)?.addEventListener(`click`,()=>{E=!1,$()}),document.querySelectorAll(`[data-info-tab]`).forEach(e=>{e.addEventListener(`click`,()=>{D=e.dataset.infoTab||`sources`,$()})})},qn=()=>{document.querySelector(`[data-warsmash-embed]`)?.addEventListener(`click`,()=>{O=!0,$()}),document.querySelectorAll(`[data-warsmash-watch]`).forEach(e=>{e.addEventListener(`click`,e=>{e.preventDefault(),e.stopPropagation(),b=null,T=`overview`,O=!0,$()})}),document.querySelectorAll(`[data-warsmash-edition]`).forEach(e=>{e.addEventListener(`click`,()=>{k=e.dataset.warsmashEdition||`legacy`,localStorage.setItem(`wc3-warsmash-selected-edition`,k),O=!1,$()})}),document.querySelectorAll(`[data-warsmash-auto-stage]`).forEach(e=>{e.addEventListener(`click`,()=>{mn(k)})}),document.querySelector(`[data-reforged-prepare]`)?.addEventListener(`click`,()=>{hn()})},Jn=()=>{pe=`${navigator.userAgent||``} ${navigator.platform||``}`.toLowerCase().includes(`win`)?`windows`:`mac`},$=()=>{let e=ke();document.querySelector(`#app`).innerHTML=`

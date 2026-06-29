@@ -631,10 +631,10 @@ body.has-scrolled-header .brand img {
 }
 
 .site-footer-inner {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  gap: 10px 16px;
+  gap: 16px;
   min-height: 52px;
   padding: 14px 16px;
   border-top: 1px solid rgba(191, 191, 191, 0.1);
@@ -643,10 +643,21 @@ body.has-scrolled-header .brand img {
   font-weight: 700;
 }
 
+.footer-bnet-tag,
 .footer-github-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+}
+
+.footer-bnet-tag {
+  justify-self: start;
+  min-width: 0;
+  color: var(--muted);
+}
+
+.footer-github-link {
+  justify-self: center;
   color: var(--heading);
 }
 
@@ -654,10 +665,21 @@ body.has-scrolled-header .brand img {
   color: var(--white);
 }
 
+.footer-bnet-tag svg,
 .footer-github-link svg {
   width: 20px;
   height: 20px;
   fill: currentColor;
+}
+
+.footer-bnet-tag svg {
+  color: #48a0c7;
+}
+
+.footer-ai-note {
+  justify-self: end;
+  min-width: 0;
+  text-align: right;
 }
 
 .eyebrow,
@@ -3862,7 +3884,15 @@ input:focus,
 
   .site-footer-inner {
     display: grid;
+    grid-template-columns: 1fr;
     align-items: start;
+  }
+
+  .footer-bnet-tag,
+  .footer-github-link,
+  .footer-ai-note {
+    justify-self: start;
+    text-align: left;
   }
 
   .player-card-strip {
