@@ -959,7 +959,7 @@ h2 {
 
 .player-card-fireball {
   right: 4%;
-  top: 56%;
+  top: 69%;
   width: clamp(58px, 31%, 74px);
   aspect-ratio: 1;
   object-fit: contain;
