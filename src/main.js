@@ -177,6 +177,26 @@ const wc3IdLabels = {
   Hblm: 'Blood Mage',
   Hmkg: 'Mountain King',
   Hpal: 'Paladin',
+  Edem: 'Demon Hunter',
+  Ekee: 'Keeper of the Grove',
+  Emoo: 'Priestess of the Moon',
+  Ewar: 'Warden',
+  Obla: 'Blademaster',
+  Ofar: 'Far Seer',
+  Oshd: 'Shadow Hunter',
+  Otch: 'Tauren Chieftain',
+  Udea: 'Death Knight',
+  Udre: 'Dreadlord',
+  Ulic: 'Lich',
+  Ucrl: 'Crypt Lord',
+  Nbrn: 'Dark Ranger',
+  Nbst: 'Beastmaster',
+  Nfir: 'Firelord',
+  Npbm: 'Pandaren Brewmaster',
+  Nplh: 'Pit Lord',
+  Ntin: 'Tinker',
+  Nalc: 'Goblin Alchemist',
+  Nngs: 'Naga Sea Witch',
   hpea: 'Peasant',
   hfoo: 'Footman',
   hrif: 'Rifleman',
@@ -423,10 +443,12 @@ const getReplayByKey = (key) => {
 
 const cleanWc3Label = (label) => String(label || '').replace(/^[a-z]+_/, '')
 
-const labelForId = (id) => {
+const baseLabelForId = (id) => {
   const label = wc3IdLabels[id] || wc3Units[id] || wc3Buildings[id] || wc3Upgrades[id] || wc3Items[id]
-  return label ? `${cleanWc3Label(label)} (${id})` : id || 'Unknown'
+  return cleanWc3Label(label || id || 'Unknown')
 }
+
+const labelForId = (id) => `${baseLabelForId(id)}${id ? ` (${id})` : ''}`
 
 const getItemPriceLabel = (id) => {
   if (itemGoldCosts[id] === null) return 'Drop / no shop price'
@@ -539,7 +561,7 @@ const renderHeroBadge = (hero, { compact = false } = {}) => {
   return `
     <span class="hero-badge ${compact ? 'is-compact' : ''}">
       ${renderWc3ObjectIcon(heroId)}
-      <span>${escapeHtml(cleanWc3Label(labelForId(heroId)).replace(` (${heroId})`, ''))}${escapeHtml(levelLabel)}</span>
+      <span>${escapeHtml(baseLabelForId(heroId))}${escapeHtml(levelLabel)}</span>
     </span>
   `
 }
@@ -844,7 +866,7 @@ const getStartingHeroOptions = () => {
 
   getAllReplays().forEach((replay) => {
     getReplayStartingHeroIds(replay).forEach((heroId) => {
-      if (!heroes.has(heroId)) heroes.set(heroId, labelForId(heroId))
+      if (!heroes.has(heroId)) heroes.set(heroId, baseLabelForId(heroId))
     })
   })
 
@@ -1681,7 +1703,6 @@ const renderReplayRows = (replays) => {
             <div class="replay-matchup">${renderMatchupWithIcons(replay, parsedPlayers)}</div>
             <div class="replay-actions">
               ${durationLabel ? `<span class="replay-duration">${escapeHtml(durationLabel)}</span>` : ''}
-              <a href="${replay.url}" target="_blank" rel="noreferrer">Info</a>
               <a href="${replay.downloadUrl}" target="_blank" rel="noreferrer">Download</a>
             </div>
           </div>
@@ -2559,7 +2580,7 @@ const renderStatisticsPage = () => {
                 <article class="statistics-hero-card">
                   <div>
                     ${renderWc3ObjectIcon(heroId)}
-                    <h3>${escapeHtml(cleanWc3Label(labelForId(heroId)).replace(` (${heroId})`, ''))}</h3>
+                    <h3>${escapeHtml(baseLabelForId(heroId))}</h3>
                   </div>
                   <dl>
                     <div><dt>Picked</dt><dd>${escapeHtml(formatInteger(picks))}</dd></div>
