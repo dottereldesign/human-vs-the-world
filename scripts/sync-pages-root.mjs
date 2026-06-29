@@ -12,7 +12,6 @@ const publishEntries = [
   'liquipedia-human-earnings.json',
   'map-drop-tables.json',
   'map-images',
-  'race-icons',
   'rankings.json',
   'replay-analysis.json',
   'replay-packs',
