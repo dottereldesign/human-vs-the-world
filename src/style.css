@@ -4058,11 +4058,12 @@ input:focus,
 
   .brand {
     width: clamp(150px, 44vw, 210px);
-    transform: translate(-50%, -50%) translateY(20%);
+    transform: translate(-50%, -50%) translateY(20%) translateY(var(--brand-drop-y));
   }
 
   body.has-scrolled-header .brand {
     width: clamp(96px, 28vw, 132px);
+    transform: translate(-50%, -50%) translateY(var(--brand-drop-y));
   }
 
   .menu-button {
