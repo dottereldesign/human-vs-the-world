@@ -14,6 +14,14 @@
   src: url('./assets/fonts/medievalsharp-latin.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('./assets/fonts/bricolage-grotesque-800.ttf') format('truetype');
+}
+
 @property --brand-drop-y {
   syntax: '<length>';
   inherits: false;
@@ -780,6 +788,82 @@ h2 {
 .player-card-region {
   width: min(100%, 1440px);
   margin: 0 auto 32px;
+}
+
+.player-card-intro {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 48px;
+  justify-items: center;
+  text-align: center;
+}
+
+.player-card-intro .eyebrow {
+  margin: 0;
+  color: #f7c85d;
+  background: linear-gradient(90deg, #a86d1f 0%, #f7c85d 34%, #fff1a8 50%, #d99b32 72%, #7b4b16 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: clamp(24px, 2.8vw, 40px);
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  -webkit-text-fill-color: transparent;
+}
+
+.player-card-intro h1 {
+  display: grid;
+  width: 100%;
+  margin: 0;
+  color: #dcecff;
+  background: linear-gradient(180deg, #f7fbff 0%, #b9dcff 48%, #6ea6d7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-family: 'Bricolage Grotesque', Inter, system-ui, sans-serif;
+  font-size: clamp(42px, 7vw, 104px);
+  font-weight: 800;
+  line-height: 0.9;
+  text-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.12),
+    0 18px 38px rgba(82, 151, 214, 0.18);
+  text-transform: uppercase;
+  -webkit-text-fill-color: transparent;
+}
+
+.player-card-intro h1 span {
+  display: block;
+  overflow-wrap: normal;
+  text-align: center;
+  text-wrap: balance;
+  white-space: normal;
+}
+
+.player-card-intro h1 .headline-accent {
+  background: none;
+  color: #fff943;
+  -webkit-text-fill-color: #fff943;
+}
+
+.player-card-intro h1 .headline-toy-blue {
+  background: none;
+  color: #d7dde3;
+  -webkit-text-fill-color: #d7dde3;
+}
+
+.player-card-intro p:last-child {
+  max-width: 720px;
+  margin: 0;
+  color: var(--heading);
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+@media (max-width: 640px) {
+  .player-card-intro {
+    padding: 36px 18px;
+  }
 }
 
 .player-card-strip {

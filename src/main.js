@@ -1910,6 +1910,11 @@ const renderMedalBorder = (medalClass) => {
 
 const renderPlayerCards = () => `
   <section class="player-card-region ${playerCardIntroPlayed ? '' : 'with-card-intro'}" aria-label="Top Human player cards">
+    <div class="player-card-intro">
+      <p class="eyebrow">2026</p>
+      <h1><span class="headline-toy-blue">Human Replays</span><span class="headline-accent">Wins Only.</span></h1>
+      <p>These are the six active Human players highest on the WC3 Elo list. The replays here are their Human wins from 2026, so you can quickly see what works, compare builds and stats, and study the games without digging around for everything yourself.</p>
+    </div>
     <div class="player-card-strip">
       ${getRankedPlayers()
         .map((player, index) => {
